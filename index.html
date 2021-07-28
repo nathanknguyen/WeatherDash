@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Forecast Dashboard</title>
+  <link href="https ://openweathermap.org/api/one-call-api"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/jass.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <div class="flex-row align-center justify-center min-100-vh bg-primary">
+    <div class="col-12 col-md-9 flex-column align-center bg-light p-5">
+      <h1 class="text-primary">Weather Dashboard Search</h1>
+      <form id="search-form" class="form w-100">
+        <input id="search-input" class="form-input w-100" type="text" placeholder="San Diego">
+        <button class="btn btn-info btn-block">Search</button>
+      </form>
+    </div>
+  </div>
+  <div id="Weather-Data">
+  <div class="col-sm-8">
+    <div class="row ml-2 border border-dark rounded">
+        <div class="col-sm-12" id="current-weather">
+            <h3 class="city-name mb-1 mt-2 bolder" id="current-city"></h3>
+            <p>Temperature:<span class="current" id="temperature"></span></p>
+            <p>Humidity:<span class="current" id="humidity"></span></p> 
+            <p>Wind Speed:<span class="current" id="wind-speed"></span></p>
+            <p>UV index:<span class="current bg-danger rounded py-2 px-2 text-white" id="uv-index"></span></p> 
+        </div>
+    </div>
+  </div>
+  <div id="5-Day-Forecast"></div>
+    <div class="col-sm-8">
+        <div class="row ml-2 border border-dark rounded">
+            <div class="col-sm-12" id="current-weather">
+                <h3 class="city-name mb-1 mt-2 bolder" id="current-city"></h3>
+                <p>Temperature:<span class="current" id="temperature"></span></p>
+                <p>Humidity:<span class="current" id="humidity"></span></p> 
+                <p>Wind Speed:<span class="current" id="wind-speed"></span></p>
+                <p>UV index:<span class="current bg-danger rounded py-2 px-2 text-white" id="uv-index"></span></p> 
+            </div>
+        </div>
+    </div>
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
