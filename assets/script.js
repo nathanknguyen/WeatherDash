@@ -54,3 +54,33 @@ var day5temp = document.querySelector("#day5temp");
 var day5wind = document.querySelector("#day5wind");
 var day5humidity = document.querySelector("#day5humidity");
 
+// Function displays the current day and the next 5 days
+function displayDay() {
+  $("#currentCityDate").text(moment().format("[(]M/D/YYYY[)]"));
+  $("#day1date").text(moment().add(1,"days").format("M/D/YYYY"));
+  $("#day2date").text(moment().add(2,"days").format("M/D/YYYY"));
+  $("#day3date").text(moment().add(3,"days").format("M/D/YYYY"));
+  $("#day4date").text(moment().add(4,"days").format("M/D/YYYY"));
+  $("#day5date").text(moment().add(5,"days").format("M/D/YYYY"));
+}
+setInterval(displayDay, 1000);
+
+// get next five days
+var epochCurrent = Math.round((new Date()).getTime() / 1000);
+var epochNeg1 = epochCurrent - (86400 * 1)
+var epochNeg2 = epochCurrent - (86400 * 2)
+var epochNeg3 = epochCurrent - (86400 * 3)
+var epochNeg4 = epochCurrent - (86400 * 4)
+var epochNeg5 = epochCurrent - (86400 * 5)
+
+// Request url for each city
+var requestUrlAustin = "https://api.openweathermap.org/data/2.5/weather?q=Austin&units=imperial&appid=412a43a2e062fcffc23f314b23bd16bc";
+var requestUrlChicago = 'https://api.openweathermap.org/data/2.5/weather?q=Chicago&units=imperial&appid=412a43a2e062fcffc23f314b23bd16bc'
+var requestUrlNewYork = 'https://api.openweathermap.org/data/2.5/weather?q=New+York+City&units=imperial&appid=412a43a2e062fcffc23f314b23bd16bc'
+var requestUrlOrlando = 'https://api.openweathermap.org/data/2.5/weather?q=Orlando&units=imperial&appid=412a43a2e062fcffc23f314b23bd16bc'
+var requestUrlSanFrancisco = 'https://api.openweathermap.org/data/2.5/weather?q=San+Francisco&units=imperial&appid=412a43a2e062fcffc23f314b23bd16bc'
+var requestUrlSeattle = 'https://api.openweathermap.org/data/2.5/weather?q=Seattle&units=imperial&appid=412a43a2e062fcffc23f314b23bd16bc'
+var requestUrlDenver = 'https://api.openweathermap.org/data/2.5/weather?q=Denver&units=imperial&appid=412a43a2e062fcffc23f314b23bd16bc'
+var requestUrlAtlanta = 'https://api.openweathermap.org/data/2.5/weather?q=Atlanta&units=imperial&appid=412a43a2e062fcffc23f314b23bd16bc'
+
+
