@@ -83,4 +83,92 @@ var requestUrlSeattle = 'https://api.openweathermap.org/data/2.5/weather?q=Seatt
 var requestUrlDenver = 'https://api.openweathermap.org/data/2.5/weather?q=Denver&units=imperial&appid=412a43a2e062fcffc23f314b23bd16bc'
 var requestUrlAtlanta = 'https://api.openweathermap.org/data/2.5/weather?q=Atlanta&units=imperial&appid=412a43a2e062fcffc23f314b23bd16bc'
 
+// Now that everything is set up we can grab our information for each city
+// Austin
+function showResponseAustin(event) {
+  // Prevent default action
+  event.preventDefault();
 
+  // Browser Fetch Method for each of the buttons
+  fetch(requestUrlAustin)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+
+      //Begins assigning values for variables inside current city box
+      currentCity.innerHTML = (data.name);
+      currentCityWeather.innerHTML = "Weather: " + (data.weather[0].main);
+      currentCityTemp.innerHTML = "Temp: " + (data.main.temp) + "&deg; F";
+      currentCityWind.innerHTML = "Wind: " + (data.wind.speed) + "MPH";
+      currentCityHumidity.innerHTML = "Humidity: " + (data.main.humidity) + "%";
+
+      //gets the lat and lon
+      var lon = data.coord.lon;
+      var lat = data.coord.lat;
+    fetch(requestUrlAustin2)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      currentCityUVI.innerHTML = "UVI: " + (data.current.uvi);
+    });
+
+    fetch(requestUrlAustinNeg1)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      day1weather.innerHTML = "Weather: " + (data.current.weather[0].main);
+      day1temp.innerHTML = "Temp: " + (data.current.temp) + "&deg; F";
+      day1wind.innerHTML = "Wind: " + (data.current.wind_speed) + "MPH";
+      day1humidity.innerHTML = "Humidity: " + (data.current.humidity) + "%";
+    });
+
+    fetch(requestUrlAustinNeg2)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      day2weather.innerHTML = "Weather: " + (data.current.weather[0].main);
+      day2temp.innerHTML = "Temp: " + (data.current.temp) + "&deg; F";
+      day2wind.innerHTML = "Wind: " + (data.current.wind_speed) + "MPH";
+      day2humidity.innerHTML = "Humidity: " + (data.current.humidity) + "%";
+    });
+
+    fetch(requestUrlAustinNeg3)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      day3weather.innerHTML = "Weather: " + (data.current.weather[0].main);
+      day3temp.innerHTML = "Temp: " + (data.current.temp) + "&deg; F";
+      day3wind.innerHTML = "Wind: " + (data.current.wind_speed) + "MPH";
+      day3humidity.innerHTML = "Humidity: " + (data.current.humidity) + "%";
+    });
+
+    fetch(requestUrlAustinNeg4)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      day4weather.innerHTML = "Weather: " + (data.current.weather[0].main);
+      day4temp.innerHTML = "Temp: " + (data.current.temp) + "&deg; F";
+      day4wind.innerHTML = "Wind: " + (data.current.wind_speed) + "MPH";
+      day4humidity.innerHTML = "Humidity: " + (data.current.humidity) + "%";
+    });
+
+    fetch(requestUrlAustinNeg5)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      day5weather.innerHTML = "Weather: " + (data.current.weather[0].main);
+      day5temp.innerHTML = "Temp: " + (data.current.temp) + "&deg; F";
+      day5wind.innerHTML = "Wind: " + (data.current.wind_speed) + "MPH";
+      day5humidity.innerHTML = "Humidity: " + (data.current.humidity) + "%";
+    });
+  });
+}
+
+// Chicago
